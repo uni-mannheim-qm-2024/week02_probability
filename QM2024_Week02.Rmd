@@ -34,7 +34,7 @@ editor_options:
 
 ## RMarkdown revisited
 
-You have already started getting yourself acquainted with `R Markdown` while working on first assignment in `R Markdown`. Now it's time to learn a bit more about it.
+You have already started getting yourself acquainted with `R Markdown` while working on the first assignment in `R Markdown`. Now it's time to learn a bit more about it.
 
 This is an R Markdown document. It has the file extension `.Rmd`. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -72,7 +72,7 @@ if (length(p_to_install) > 0) {
   install.packages(p_to_install)
 }
 # Now that all packages are installed on the computer, you can load them for
-# this project. Additionally the expression returns whether the packages were
+# this project. Additionally, the expression returns whether the packages were
 # successfully loaded.
 sapply(p_needed, require, character.only = TRUE)
 ```
@@ -120,7 +120,7 @@ The prefixes you can use are d, p, q and r. When to use which prefix?
 
 3.  Use **q** when you know the area p and want to know the x value
 
-    -   This is exactly the opposite to p.
+    -   This is exactly the opposite of p.
 
 4.  Use **r** if you want random numbers drawn from a distribution.
 
@@ -132,12 +132,12 @@ The prefixes you can use are d, p, q and r. When to use which prefix?
     -   `norm` for the Normal distribution
     -   `unif` for the Uniform distribution
     
-For each of the distributions you need to specify different parameters!
+For each of the distributions, you need to specify different parameters!
     
 
 ### Overview of R functions {.tabset}
 
-Visually, you can see what each of these functions do on these plots:
+Visually, you can see what each of these functions does on these plots:
 
 
 #### Discrete Distribution
@@ -168,7 +168,7 @@ Let's start with Discrete Probability Distributions. Can you think of examples o
 
 #### The Bernoulli Distribution
 
-The Bernoulli distribution is the simplest Discrete Probability Distribution. The Bernoulli distribution is a special case of the binomial distribution. It is a Binomial distribution with size 1. Thus, it is ideal for modelling **one-time** yes/no (success/failure) events.
+The Bernoulli distribution is the simplest Discrete Probability Distribution. The Bernoulli distribution is a special case of the binomial distribution. It is a Binomial distribution with size 1. Thus, it is ideal for modeling **one-time** yes/no (success/failure) events.
 
 ```{r Discrete Probability Distributions I}
 dbinom(x = 1, size = 1, prob = 0.8)  # What does the result tell us?  
@@ -176,7 +176,7 @@ dbinom(x = 1, size = 1, prob = 0.8)  # What does the result tell us?
 dbinom(x = 0, size = 1, prob = 0.8)  # What does the result tell us?
 ```
 
--   `x` = number of successes (e.g. pass an exam)
+-   `x` = number of successes (e.g. passing an exam)
 -   `size` = number of trials (1 coin flip)
 -   `prop` = probability of 'success' (e.g. probability of passing an exam)
 
@@ -188,7 +188,7 @@ rbinom(n = 1, size = 1, prob = 0.5)
 
 Ok, we could have done this with a real coin. Let's toss one coin 1000 times. Any volunteers?
 
-Luckily, R can simulate this quicker.
+Luckily, R can simulate this more quickly.
 
 ```{r Discrete Probability Distributions III}
 trial1 <- rbinom(n = 1000, size = 1, prob = 0.5)
@@ -222,7 +222,7 @@ dbinom(x = c(0, 1, 2),
 pbinom(1, 2, 0.5)
 ```
 
--   What is the probability of more than 1 heads (successes)?
+-   What is the probability of more than 1 head (successes)?
 
 ```{r Binomial III}
 1 - pbinom(1, 2, 0.5)
@@ -258,7 +258,7 @@ x_values <- 0:100
 # Now we produce an empty plot.
 plot(
   x = x_values,
-  ylim = c(0, 0.1), # With ylim you can adjust the limits of the y axis.
+  ylim = c(0, 0.1), # With ylim you can adjust the limits of the y-axis.
   type = "n",       # type "n" produces an empty plot window.
   main = "PMF for Binomial (n = 100, p = 0.5)",
   xlab = "x",
@@ -308,7 +308,7 @@ plot(x = x_values,
 
 ##### ggplot2
 
-`ggplot2` is a very widely used package for visualization in R community. We will be providing you with code using this package in addition to the code with bulit-in functions of R.
+`ggplot2` is a very widely used package for visualization in the R community. We will be providing you with code using this package in addition to the code with built-in functions of R.
 
 First, a few words about `ggplot2`. When working with this package, we think about images as being constructed from layers: the *data*-level, the mapping *aesthetics* level, and the *geom* level. These are the essential, but there are many more:
 
@@ -355,7 +355,7 @@ What does the cumulative distribution function of the same Binomial look like?
 
 ```{r Binomial-CDF-ggplot}
 
-# Add new column to our dataset 
+# Add a new column to our dataset 
 
 binom_data$CDF <- pbinom(x_values, size = 100, p = 0.5) 
 
@@ -373,7 +373,7 @@ ggplot(
 
 #### Example II: Airline Reservations {.tabset}
 
-A flight has 100 available seats, but the airline accepted 120 reservations (overbooking).
+A flight has 100 available seats, but the airline accepts 120 reservations (overbooking).
 
 The probability of each person showing up is 0.85.
 
@@ -576,7 +576,7 @@ sd <- sqrt((n * p * (1 - p)))  # Why do we have to use the square root?
 
 Let's solve an example with the normal distribution:
 
-a)  What is the probability that more than 100 people will show up, if we accept 120 reservations?
+a)  What is the probability that more than 100 people will show up if we accept 120 reservations?
 b)  Plot the normal distribution.
 c)  Compare your result to the Binomial process from above.
 
@@ -637,13 +637,13 @@ ggplot(airline_data,
 
 ------------------------------------------------------------------------
 
-## Variable standartization
+## Variable standardization
 
-Sometimes we have variables on different scales or from different distributions that we want to compare. In order to compare results from these variables we can standardize them. In the literature this is also called z-standardization. Essentially, we transform any continuous variable to have a mean of 0 and standard deviation of 1. Just like a standard normal distribution! The formula for standardization is
+Sometimes we have variables on different scales or from different distributions that we want to compare. In order to compare results from these variables we can standardize them. In the literature, this is also called z-standardization. Essentially, we transform any continuous variable to have a mean of 0 and a standard deviation of 1. Just like a standard normal distribution! The formula for standardization is
 
 $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 
-In a nutshell, we subtract the mean of our variable from each individual observation and divide that difference by the standard deviation of our variable. Let's consider an example. We have two weightlifters at the gym, one woman -- Sally and one man -- Jack. Sally can lift 90kg on the bench press, while Jack can lift 160kg. Who is stronger? Women and men have different distributions of how many kilograms they can lift, so it is unhelpful to compare raw numbers. This is where standardization comes in. Let's consider that women lift on average 60kg with a standard deviation of 20kg. For men, the distribution has a mean of 120 kg with a standard deviation of 40kg.
+In a nutshell, we subtract the mean of our variable from each individual observation and divide that difference by the standard deviation of our variable. Let's consider an example. We have two weightlifters at the gym, one woman -- Sally -- and one man -- Jack. Sally can lift 90kg on the bench press, while Jack can lift 160kg. Who is stronger? Women and men have different distributions of how many kilograms they can lift, so it is unhelpful to compare raw numbers. This is where standardization comes in. Let's consider that women lift on average 60kg with a standard deviation of 20kg. For men, the distribution has a mean of 120 kg with a standard deviation of 40kg.
 
 ```{r Standartization I, fig.show="hold", out.width="50%"}
 
@@ -663,9 +663,9 @@ jack_power
 
 ```
 
-Sally has a higher standardized score, meaning that comparing her to the Women's population, she is actually stronger than Jack, when comparing him to the men's population. Z-scores can be directly interpreted as how many standard deviations are you away from the population mean. In this case, Sally is 1.5 standard deviations stronger than the average woman and Jack is 1 standard deviation stronger than an average man. Both are pretty strong people, but Sally is stronger.
+Sally has a higher standardized score, meaning that comparing her to the Women's population, she is actually stronger than Jack when comparing him to the men's population. Z-scores can be directly interpreted as how many standard deviations are you away from the population mean. In this case, Sally is 1.5 standard deviations stronger than the average woman and Jack is 1 standard deviation stronger than an average man. Both are pretty strong people, but Sally is stronger.
 
-You can use the same logic when standardising variables. Let's generate a variable!
+You can use the same logic when standardizing variables. Let's generate a variable!
 
 ```{r Standartization II, fig.show="hold", out.width="50%"}
 
@@ -673,13 +673,13 @@ You can use the same logic when standardising variables. Let's generate a variab
 
 variable <- rnorm(100, mean = 200, sd = 700)
 
-# Definately not standardized!
+# Definitely not standardized!
 
 mean(variable)
 
 sd(variable)
 
-# So let's stnadardize it!
+# So let's standardize it!
 
 standard_variable <- (variable - mean(variable))/sd(variable)
 
@@ -786,7 +786,7 @@ The original standard deviation value was 5, so $\frac{25}{n}$ should be the var
 var(pop)/400
 ```
 
-In the lecture we learned that the sampling distribution of the mean always approaches a normal distribution, regardless of the shape of the original distribution!
+In the lecture, we learned that the sampling distribution of the mean always approaches a normal distribution, regardless of the shape of the original distribution!
 
 You don't believe me? See for yourself.
 
@@ -1011,7 +1011,7 @@ Let's calculate the mean and the standard deviation of the normal distribution:
 
 Let's solve an example with the normal distribution:
 
-a)  What is the probability that more than 250 people will show up, if we make 275 reservations?
+a)  What is the probability that more than 250 people will show up if we make 275 reservations?
 b)  Plot the normal distribution.
 c)  Compare your result to the Binomial process from above.
 
