@@ -637,6 +637,62 @@ ggplot(airline_data,
 
 ------------------------------------------------------------------------
 
+## Variable standartization
+
+Sometimes we have variables on different scales or from different distributions that we want to compare. In order to compare results from these variables we can standardize them. In the literature this is also called z-standardization. Essentially, we transform any continuous variable to have a mean of 0 and standard deviation of 1. Just like a standard normal distribution! The formula for standardization is
+
+$$z_i = \frac{x_i - \bar{x}}{\sigma}$$
+
+In a nutshell, we subtract the mean of our variable from each individual observation and divide that difference by the standard deviation of our variable. Let's consider an example. We have two weightlifters at the gym, one woman -- Sally and one man -- Jack. Sally can lift 90kg on the bench press, while Jack can lift 160kg. Who is stronger? Women and men have different distributions of how many kilograms they can lift, so it is unhelpful to compare raw numbers. This is where standardization comes in. Let's consider that women lift on average 60kg with a standard deviation of 20kg. For men, the distribution has a mean of 120 kg with a standard deviation of 40kg.
+
+```{r Standartization I, fig.show="hold", out.width="50%"}
+
+# Standardizing the lift strength for the Sally
+
+sally_power <- (90-60)/20
+
+# And now for Jack
+
+jack_power <- (160-120)/40
+
+# Who is stronger?
+
+sally_power 
+
+jack_power
+
+```
+
+Sally has a higher standardized score, meaning that comparing her to the Women's population, she is actually stronger than Jack, when comparing him to the men's population. Z-scores can be directly interpreted as how many standard deviations are you away from the population mean. In this case, Sally is 1.5 standard deviations stronger than the average woman and Jack is 1 standard deviation stronger than an average man. Both are pretty strong people, but Sally is stronger.
+
+You can use the same logic when standardising variables. Let's generate a variable!
+
+```{r Standartization II, fig.show="hold", out.width="50%"}
+
+# Creating a random variable
+
+variable <- rnorm(100, mean = 200, sd = 700)
+
+# Definately not standardized!
+
+mean(variable)
+
+sd(variable)
+
+# So let's stnadardize it!
+
+standard_variable <- (variable - mean(variable))/sd(variable)
+
+# Now it is actually standardized
+
+mean(standard_variable)
+
+sd(standard_variable)
+
+```
+
+------------------------------------------------------------------------
+
 ## Central Limit Theorem
 
 Finally, we want to better understand the central limit theorem. Let's generate a random population:
