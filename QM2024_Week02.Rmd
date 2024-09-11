@@ -319,7 +319,7 @@ First, a few words about `ggplot2`. When working with this package, we think abo
 -   *Facets:* sub-panels in the plot
 -   *Coordinates:* features of the coordinate system (orientation...)
 
-With `ggplot2`package, it is most effective to work with datasets. So we'll start by putting all of our vectors into a `data.frame` object.
+If you want an overview of the different types of plots you can make with `ggplot2`, you can look at them [here][https://r-graph-gallery.com/]. With the `ggplot2`package, it is most effective to work with datasets. So we'll start by putting all of our vectors into a `data.frame` object.
 
 ```{r Binomial-PMF-ggplot}
 library(ggplot2) 
@@ -663,7 +663,7 @@ jack_power
 
 ```
 
-Sally has a higher standardized score, meaning that comparing her to the Women's population, she is actually stronger than Jack when comparing him to the men's population. Z-scores can be directly interpreted as how many standard deviations are you away from the population mean. In this case, Sally is 1.5 standard deviations stronger than the average woman and Jack is 1 standard deviation stronger than an average man. Both are pretty strong people, but Sally is stronger.
+Sally has a higher standardized score, meaning that comparing her to the Women's population, she is actually stronger than Jack when comparing him to the men's population. Z-scores can be directly interpreted as how many standard deviations you are away from the population mean. In this case, Sally is 1.5 standard deviations stronger than the average woman and Jack is 1 standard deviation stronger than an average man. Both are pretty strong people, but Sally is stronger.
 
 You can use the same logic when standardizing variables. Let's generate a variable!
 
