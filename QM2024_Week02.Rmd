@@ -319,7 +319,7 @@ First, a few words about `ggplot2`. When working with this package, we think abo
 -   *Facets:* sub-panels in the plot
 -   *Coordinates:* features of the coordinate system (orientation...)
 
-If you want an overview of the different types of plots you can make with `ggplot2`, you can look at them [here][https://r-graph-gallery.com/]. With the `ggplot2`package, it is most effective to work with datasets. So we'll start by putting all of our vectors into a `data.frame` object.
+If you want an overview of the different types of plots you can make with `ggplot2`, you can look at them [here](https://r-graph-gallery.com/). With the `ggplot2`package, it is most effective to work with datasets. So we'll start by putting all of our vectors into a `data.frame` object.
 
 ```{r Binomial-PMF-ggplot}
 library(ggplot2) 
